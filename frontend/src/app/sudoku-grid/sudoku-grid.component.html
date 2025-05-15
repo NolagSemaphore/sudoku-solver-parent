@@ -1,0 +1,28 @@
+
+<div class="controls">
+    <button (click)="solveSudoku()">Solve</button>
+    <button (click)="clearBoard()">Clear</button>
+</div>
+<div class="sudoku-board">
+    <div
+      class="row"
+      *ngFor="let row of board; let i = index; trackBy: trackByIndex"
+    >
+      <div
+        class="cell"
+        *ngFor="let cell of row; let j = index; trackBy: trackByIndex"
+      >
+      <input
+      type="text"
+      inputmode="numeric"
+      pattern="[1-9]"
+      maxlength="1"
+      [(ngModel)]="board[i][j]"
+      [ngModelOptions]="{ standalone: true }"
+      (keypress)="filterInput($event)"
+    />
+
+      </div>
+    </div>
+  </div>
+  
