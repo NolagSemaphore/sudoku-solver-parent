@@ -6,7 +6,7 @@ This is a full-stack web application for solving Sudoku puzzles, built with:
 - **Spring Boot (Java)** (backend)
 
 The app allows users to input Sudoku puzzles via a web interface, send them to a REST API, and receive the solved puzzle in real time.
-
+This app originally began as a Java-based command-line tool for solving Sudoku puzzles. I later added an Angular frontend to make the project more accessible and user-friendly. To integrate the existing backend quickly, I adapted the project structure with a minimal setup. If I were starting from scratch, I would design it differently—but the process has been a valuable learning experience in connecting a legacy backend to a modern frontend.
 ---
 
 ## 🔧 Features
