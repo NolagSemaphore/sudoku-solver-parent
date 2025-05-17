@@ -1,4 +1,6 @@
-
+<div *ngIf="errorMessage" style="color: red; margin-bottom: 1em;">
+    {{ errorMessage }}
+  </div>
 <div class="controls">
     <button (click)="solveSudoku()">Solve</button>
     <button (click)="clearBoard()">Clear</button>

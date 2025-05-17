@@ -20,6 +20,8 @@ export class SudokuGridComponent {
   
   board: SudokuValue[][] = Array.from({ length: 9 }, () => Array(9).fill(null));
 
+  errorMessage: string | null = null;
+
 
   constructor(private http: HttpClient) {}
 
@@ -33,8 +35,14 @@ export class SudokuGridComponent {
       .subscribe({
         next: response => {
           this.board = response.board;
+          this.errorMessage = null;
         },
         error: err => {
+          if (err.status === 400 && err.error) {
+            this.errorMessage = err.error;
+          } else {
+            this.errorMessage = "An unexpected error occurred.";
+          }
           console.error('Error solving Sudoku:', err);
         }
       });
@@ -42,6 +50,7 @@ export class SudokuGridComponent {
 
   clearBoard() {
     this.board = Array.from({ length: 9 }, () => Array(9).fill(null));
+    this.errorMessage = null;
   }
 
   trackByIndex(index: number): number {
