@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { environment } from '../../environments/environment';
+
 
 type SudokuValue = number | null;
 
@@ -20,6 +22,7 @@ export class SudokuGridComponent {
   
   board: SudokuValue[][] = Array.from({ length: 9 }, () => Array(9).fill(null));
 
+  private apiUrl = environment.apiUrl;
   errorMessage: string | null = null;
 
 
@@ -30,8 +33,8 @@ export class SudokuGridComponent {
     const requestBody = {
       board: this.board.map(row => row.map(cell => cell ?? 0))
     };
-
-    this.http.post<{ board: number[][] }>('/api/sudoku/solve', requestBody)
+  
+    this.http.post<{ board: number[][] }>(`${this.apiUrl}/solve`, requestBody)
       .subscribe({
         next: response => {
           this.board = response.board;
