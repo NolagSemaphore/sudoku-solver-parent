@@ -1,7 +1,6 @@
 # Sudoku Solver App
 
 This is a full-stack web application for solving Sudoku puzzles, built with:
-[Live Demo](https://sudoku-solver-parent-frontend.onrender.com)
 
 - **Angular 19** (frontend)
 - **Spring Boot (Java)** (backend)
