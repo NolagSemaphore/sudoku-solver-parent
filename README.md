@@ -53,9 +53,9 @@ ng serve
 
 ---
 
-## 🌐 Live Demo (Coming Soon)
+## 🌐 Live Demo (Please allow up to a minute for the first solve, since Render.com has to spin up new instance after 15 minutes of inactivity. After that, it should be fast)
 
-This app will be deployed on [Render.com](https://render.com). A public link will be added here once live.
+[Live Demo](https://sudoku-solver-parent-frontend.onrender.com)
 
 ---
 
